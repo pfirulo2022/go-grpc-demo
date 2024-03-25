@@ -1,3 +1,4 @@
+// for syntax highlighting we use proto3 version
 syntax="proto3";
 
 // path to our current folder, where the generated files will be placed
@@ -37,3 +38,4 @@ message NamesList {
 message MessagesList {
     repeated string messages = 1;
 }
+

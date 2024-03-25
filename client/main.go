@@ -9,13 +9,13 @@ import (
 )
 
 const (
-	port = "8080"
+	port = ":8080"
 )
 
 func main() {
 	conn, err := grpc.Dial("localhost"+port, grpc.WithTransportCredentials(insecure.NewCredentials()))
 	if err != nil {
-		log.Fatalf("did not connect:  %v", err)
+		log.Fatalf("Did not connect: %v", err)
 	}
 	defer conn.Close()
 
@@ -25,5 +25,5 @@ func main() {
 		Names: []string{"Akhil", "Alice", "Bob"},
 	}
 
-	callSayHelloServerStream(client, names)
+	callSayHelloBidirectionalStream(client, names)
 }
